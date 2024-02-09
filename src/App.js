@@ -5,6 +5,7 @@ import TopSection from "./components/TopSection";
 import BottomSection from "./components/BottomSection";
 
 export default function App() {
+  const classCondition = document.getElementsByClassName('name-input').length === 0
   const [playerName, setPlayerName] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -35,8 +36,7 @@ export default function App() {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <TopSection submitted={submitted} />
-
+      
       {/*-----Input'unuz burada olacak----------*/}
       <input
     className="name-input"
@@ -46,11 +46,11 @@ export default function App() {
     required
     disabled={submitted}
     value={playerName}
-    onChange={(e) => setPlayerName(e.target.value)}
-/>
+    onChange={(e) => setPlayerName(e.target.value)}/> 
+
       {/*-----Input'unuz burada olacak----------*/}
 
-      <BottomSection submitted={submitted} playerName={playerName} />
+      <BottomSection submitted={submitted} playerName={playerName}/>
     </form>
   );
 }
