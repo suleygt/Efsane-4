@@ -5,9 +5,9 @@ import TopSection from "./components/TopSection";
 import BottomSection from "./components/BottomSection";
 
 export default function App() {
-  const classCondition = document.getElementsByClassName('name-input').length === 0
   const [playerName, setPlayerName] = useState("");
   const [submitted, setSubmitted] = useState(false);
+
 
   function handleSubmit(e) {
     e.preventDefault();
